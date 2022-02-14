@@ -27,6 +27,7 @@ const Page4 = () => {
 
 const styles = StyleSheet.create({
   forCity: {
+    flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
@@ -36,8 +37,9 @@ const styles = StyleSheet.create({
   },
   forMainCard: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
     borderWidth: 1,
     borderColor: 'red',
     minWidth: '100%',

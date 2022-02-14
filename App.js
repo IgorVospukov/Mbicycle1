@@ -15,7 +15,7 @@ export default function App() {
     <View style={styles.container}>
       {/* <Navbar title="ghjjfjfjf" /> */}
       {/* <Page1 /> */}
-      {/* <Page2 />  */}
+      {/* <Page2 /> */}
       {/* <Page3 /> */}
       {/* <Page4 /> */}
       <Navigate />

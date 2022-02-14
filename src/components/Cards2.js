@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-DATA = [
+DATA2 = [
   {
     id: '1',
     city: 'GOMEL',
@@ -76,9 +76,9 @@ const Cards2 = () => {
 
   return (
     <View style={styles.forMainView}>
-      {DATA.length > 0 ? (
+      {DATA2.length > 0 ? (
         <FlatList
-          data={DATA}
+          data={DATA2}
           renderItem={renderItem}
           keyExtractor={({ id }) => id}
         />

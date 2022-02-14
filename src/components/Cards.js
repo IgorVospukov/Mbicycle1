@@ -79,7 +79,7 @@ const Cards = () => {
           keyExtractor={({ id }) => id}
         />
       ) : (
-        <Text style={styles.forEmptyCardText}>fgfgffgf</Text>
+        <Text style={styles.forEmptyCardText}>no data</Text>
       )}
     </View>
   );
