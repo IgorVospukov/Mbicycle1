@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
-import SplashScreen from 'react-native-splash-screen';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, SafeAreaView } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import Navigate from './src/Pages/Navigate';
 import { Provider } from 'react-redux';
 import { store } from './src/redux/index';

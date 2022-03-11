@@ -20,7 +20,7 @@ const Page2 = ({ navigation }) => {
     if (text.length >= 3) {
       setTimeout(() => dispatch(getDataWeatherforSingleCity(text)), 1000);
     } else {
-      console.log('ne to');
+      console.log('Length less than 3');
     }
   }, [text]);
 
@@ -61,7 +61,7 @@ const Page2 = ({ navigation }) => {
         />
       </View>
       {!text ? (
-        <Cards onPage4={loadScreen4}></Cards>
+        <Cards></Cards>
       ) : (
         <View>
           <FlatList

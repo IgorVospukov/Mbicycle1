@@ -18,7 +18,6 @@ const Page4 = ({ route }) => {
           }}
           style={styles.img}
         />
-
         <Text style={styles.textCard}>{nameCity.main.temp}&#176;C</Text>
       </View>
     </View>

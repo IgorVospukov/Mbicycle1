@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getDataWeather } from '../asyncActions/getDataWeather';
 
 const Page1 = ({ navigation }) => {
@@ -20,9 +20,8 @@ const Page1 = ({ navigation }) => {
     <View style={styles.forPage1}>
       <View style={styles.forIonics}>
         <Ionicons
+          style={styles.forIonicsTag}
           name="ios-logo-reddit"
-          size={80}
-          color="black"
           onPress={callPageandDispatch}
         />
       </View>
@@ -36,6 +35,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  forIonicsTag: {
+    color: 'black',
+    transform: [{ scaleX: 6 }, { scaleY: 6 }],
   },
   forIonics: {
     justifyContent: 'center',

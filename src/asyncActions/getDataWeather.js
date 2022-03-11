@@ -18,7 +18,6 @@ export const getDataWeather = () => {
   return (dispatch) => {
     axios
       .all(endpoints.map((endpoint) => axios.get(endpoint)))
-      // .then((response) => console.log(response))
       .then((response) => dispatch(addWeatherCities(response)))
       .catch((error) => {
         console.error(error);

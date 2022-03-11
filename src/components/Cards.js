@@ -1,26 +1,15 @@
-import React, { useState } from 'react';
-import {
-  View,
-  FlatList,
-  Text,
-  Image,
-  StyleSheet,
-  SafeAreaView,
-} from 'react-native';
+import React from 'react';
+import { View, FlatList, Text, Image, StyleSheet } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { useDispatch, useSelector } from 'react-redux';
-import { getDataWeatherforSingleCity } from '../asyncActions/getDataforSingleCity';
+import { useSelector } from 'react-redux';
 
-const Cards = ({ onPage4 }) => {
+const Cards = () => {
   const Data = useSelector((state) => state.getWeather.data);
   const data = Data.flat();
-  const dispatch = useDispatch();
 
   const renderItem = ({ item }) => (
     <View style={styles.forEveryCard}>
-      <Text style={styles.textCard} onPress={onPage4}>
-        {item.data.timezone}
-      </Text>
+      <Text style={styles.textCard}>{item.data.timezone}</Text>
       <Image
         source={{
           uri: `http://openweathermap.org/img/w/${item.data.current.weather[0].icon}.png`,
@@ -33,9 +22,7 @@ const Cards = ({ onPage4 }) => {
   const renderItem2 = ({ item }) => (
     <View style={styles.forEveryCard2}>
       <View style={styles.forWrapper2}>
-        <Text style={styles.textCard2} onPress={onPage4}>
-          {item.data.timezone}
-        </Text>
+        <Text style={styles.textCard2}>{item.data.timezone}</Text>
         <Text style={styles.textCard2Temp2}>
           {item.data.current.temp}&#176;C
         </Text>
@@ -53,7 +40,7 @@ const Cards = ({ onPage4 }) => {
     <View style={styles.forMainView}>
       {data.length == 0 ? (
         <View style={styles.forEmtyData}>
-          <FontAwesome5 name="sad-cry" size={42} color="black" />
+          <FontAwesome5 style={styles.forFontAwesome5Tag} name="sad-cry" />
           <Text style={styles.forEmptyCardText}>No data for City</Text>
         </View>
       ) : data.length < 5 && data.length != 0 ? (
@@ -80,6 +67,10 @@ const styles = StyleSheet.create({
   },
   forWrapper2: {
     flexDirection: 'column',
+  },
+  forFontAwesome5Tag: {
+    color: 'black',
+    transform: [{ scaleX: 6 }, { scaleY: 6 }],
   },
   forEveryCard: {
     flexDirection: 'column',
@@ -109,8 +100,7 @@ const styles = StyleSheet.create({
     height: 70,
   },
   forEmptyCardText: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginTop: 30,
   },
   forEmtyData: {
     flex: 1,
